@@ -4,6 +4,7 @@ const loaders = require('./config/loaders')
     , alias = require('./config/alias')
     , HtmlWebpackPlugin = require('html-webpack-plugin')
     , MiniCssExtractPlugin = require('mini-css-extract-plugin')
+    , TransformObjectRestSpread = require('transform-object-rest-spread')
     , path = require('path')
     , src = path.join(__dirname, '..', 'src')
     , dist = path.join(__dirname, '..', 'dist')
@@ -19,7 +20,6 @@ module.exports = {
 
     devServer: {
         contentBase: dist,
-        historyApiFallback: true,
         open: true,
         port: 9000
     },
@@ -35,7 +35,7 @@ module.exports = {
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].scss",
+            filename: "[name].scss",    
             chunkFilename: "[id].scss"
         })
     ]

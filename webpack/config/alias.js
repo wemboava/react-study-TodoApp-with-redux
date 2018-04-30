@@ -10,5 +10,8 @@ module.exports = {
     '_img': path.join(src, 'assets', 'images'),
     '_fonts': path.join(src, 'assets', 'fonts'),
     '_scss': path.join(src, 'assets', 'scss'),
-    '_npm': path.join(__dirname, '../..', 'node_modules')
+    '_npm': path.join(__dirname, '../..', 'node_modules'),
+    '_app': path.join(src, 'app'),
+    '_components': path.join(src, 'app', 'components'),
+    '_utils': path.join(src, 'app', 'utils')
 }
