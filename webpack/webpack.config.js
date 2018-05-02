@@ -4,12 +4,21 @@ const loaders = require('./config/loaders')
     , alias = require('./config/alias')
     , HtmlWebpackPlugin = require('html-webpack-plugin')
     , MiniCssExtractPlugin = require('mini-css-extract-plugin')
-    , TransformObjectRestSpread = require('transform-object-rest-spread')
     , path = require('path')
     , src = path.join(__dirname, '..', 'src')
     , dist = path.join(__dirname, '..', 'dist')
 
+    console.log(path.join(src , 'index.js'))
+
 module.exports = {
+    entry: path.join(src , 'index.js'),
+
+    output: {
+        path: dist,
+        publicPath: '/',
+        filename: 'main.js'
+    },
+
     devtool: 'source-map',
 
     module: {
@@ -31,12 +40,12 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: path.join(src, '..', 'index.html'),
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].scss",    
-            chunkFilename: "[id].scss"
+            filename: "[name].css",    
+            chunkFilename: "[id].css"
         })
     ]
 }
