@@ -23,9 +23,9 @@ export default class Todo extends Component {
                     description: 'Estudar para a prova', 
                     id: 3
                 }
-            ] 
+            ]
         }
-        
+
         this.handleChange = this.handleChange.bind(this)
         this.handleAdd = this.handleAdd.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
@@ -42,7 +42,7 @@ export default class Todo extends Component {
     handleAdd () {
 
     }
-    
+
     handleRemove (todo) {
 
     }
